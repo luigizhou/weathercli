@@ -20,8 +20,8 @@ type WeatherResponse struct {
 	} `json:"weather"`
 }
 
-const weatherAPIURL = "https://api.openweathermap.org/data/2.5/weather"
-const apiKey = "413a0c18def7e7c6c11ecd30c1f7305a"
+const weatherAPIURL = "https://api.openweathermap.org/data/2.5/weather" // TODO: Make it configurable
+const apiKey = ""                                                       // TODO: use VIPER or pass it as parameter to cli
 
 func FetchWeatherData(city string) (string, error) {
 	url := fmt.Sprintf("%s?q=%s&appid=%s", weatherAPIURL, city, apiKey)
